@@ -1,0 +1,30 @@
+
+
+<c-card  style="margin-left: 200px; margin-right: 200px;">
+     <c-card-body>
+      
+       <h5 cCardTitle class="text-center">{{enqData.firstName}} {{enqData.lastName}} 
+        <c-badge color="primary" shape="rounded-pill">Listing ID: {{enqData.listingId}}</c-badge> 
+      </h5>
+      <div> 
+      <hr>
+      <ul style="display: inline-block; width: 40%; list-style: none;">
+        <li>Email</li>
+        <li>Phone Number</li>
+        <li> Message</li>
+        <li>created Date</li>
+     </ul>
+     <ul style="display: inline-block; width: 60%;  list-style: none;">
+      <li>{{enqData.email}}</li>  
+        <li>{{enqData.dialingCode}}{{enqData.phoneNumber}}</li>
+        <li>{{enqData.message}}</li>
+        <li>{{enqData.createdAt}}</li>
+        
+     </ul>
+    </div>
+       <div class="text-center">
+          <button (click)="backEnquiry()"  cButton class="me-1 mb-3" color="primary">Back</button>
+          <button (click)="deleteEnquiry(enqData.id)" cButton class="me-1 mb-3" color="danger">Delete</button>
+       </div>
+     </c-card-body>
+   </c-card>

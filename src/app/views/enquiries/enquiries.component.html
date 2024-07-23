@@ -1,0 +1,97 @@
+<c-row>
+    <c-col xs>
+      <c-card class="mb-4">
+        <c-card-body>
+          <table
+            [hover]="true"
+            [responsive]="true"
+            [striped]="true"
+            align="middle"
+            cTable
+            class="mb-0 border"
+          >
+            <thead class="text-nowrap text-truncate text-center">
+            <tr>
+              <!-- <th class="bg-body-tertiary text-center ">
+                <svg cIcon name="cilPeople"></svg>
+              </th> -->
+              <th class="bg-body-tertiary">First Name</th>
+              <th class="bg-body-tertiary">Last Name</th>
+              <th class="bg-body-tertiary text-center">Phone Number</th>
+              <th class="bg-body-tertiary">Email Address </th>
+              <th class="bg-body-tertiary text-center">Message</th>
+              <th class="bg-body-tertiary">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              @for (enquiries of enqData; track $index;  ) {
+                <tr class="text-center">
+                    <td>
+                        <div>{{ enquiries.firstName }}</div>
+                      </td>
+                    <td>
+                        <div>{{ enquiries.lastName }}</div>
+                      </td>
+                    <td>
+                        <div>{{ enquiries.phoneNumber }}</div>
+                      </td>
+                    <td>
+                        <div>{{ enquiries.email }}</div>
+                      </td>
+                    <td>
+                        <div>{{ enquiries.message }}</div>
+                      </td>
+                      <td>
+                        <button (click)="routeEnquiry(enquiries.id)"  cButton class="me-1 mb-3" color="primary">View</button>
+                    </td>
+                </tr>
+                
+                <!-- <tr>
+                  <td class="text-center">
+                    <c-avatar [size]="'md'" src="{{ enquiries.firstname }}" status="{{ enquiries.firstname }}" />
+                  </td>
+                  <td>
+                    <div>{{ enquiries.firstname }}</div>
+                    <div class="small text-body-secondary text-nowrap">
+                    <span>
+                      {{ enquiries.firstname}} | Registered: {{ enquiries.firstname }}
+                    </span>
+                    </div>
+                  </td>
+                  <td class="text-center">
+                    <svg
+                      cIcon
+                      id="{{ enquiries.firstname + enquiries.firstname }}"
+                      name="cif{{ enquiries.firstname }}"
+                      size="xl"
+                      title="{{ enquiries.firstname }}"
+                    ></svg>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <div class="float-start">
+                        <strong>{{ enquiries.firstname}}%</strong>
+                      </div>
+                      <div class="float-end ms-1 text-nowrap">
+                        <small class="text-body-secondary">
+                          {{ enquiries.firstname }}
+                        </small>
+                      </div>
+                    </div>
+                    <c-progress thin [value]="enquiries.firstname" color="{{ enquiries.firstname }}" aria-label="Usage" />
+                  </td>
+                  <td class="text-center">
+                    <svg cIcon name="cibCc{{ enquiries.firstname }}" size="xl"></svg>
+                  </td>
+                  <td>
+                    <div class="small text-body-secondary">Last login</div>
+                    <div class="fw-semibold text-nowrap">{{ enquiries.firstname}}</div>
+                  </td>
+                </tr> -->
+              }
+            </tbody>
+          </table>
+        </c-card-body>
+      </c-card>
+    </c-col>
+</c-row>
