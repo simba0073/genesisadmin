@@ -23,12 +23,39 @@ export const routes: Routes = [
         path: 'enquiries',
         loadChildren: () => import('./views/enquiries/enq.routes').then((m) => m.routes),
       },
-        {
+      {
           path: 'view/:enquiryId',
           loadChildren: () => import('./views/enquiries/viewequiry/view.routes').then((m) => m.routes),
           resolve: {
             singleEnquiry: SingleEnquiryResolver
         },
+        
+      },
+      {
+        path: 'refund/:orderId',
+        loadChildren: () => import('./views/enquiries/refundorder/refund.routes').then((m) => m.routes),
+        resolve: {
+          // singleEnquiry: SingleEnquiryResolver
+      },
+      
+    },
+
+    {
+      path: 'cancelorder',
+      loadChildren: () => import('./views/enquiries/cancelorder/cancel.routes').then((m) => m.routes),
+      resolve: {
+        // singleEnquiry: SingleEnquiryResolver
+    },
+    
+  },
+
+    {
+      path: 'createorder',
+      loadChildren: () => import('./views/enquiries/createorder/create.routes').then((m) => m.routes),
+      resolve: {
+        // singleEnquiry: SingleEnquiryResolver
+    },
+    
   },
 
       {

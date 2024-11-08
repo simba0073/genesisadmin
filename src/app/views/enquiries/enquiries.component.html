@@ -15,34 +15,46 @@
               <!-- <th class="bg-body-tertiary text-center ">
                 <svg cIcon name="cilPeople"></svg>
               </th> -->
-              <th class="bg-body-tertiary">First Name</th>
-              <th class="bg-body-tertiary">Last Name</th>
-              <th class="bg-body-tertiary text-center">Phone Number</th>
-              <th class="bg-body-tertiary">Email Address </th>
-              <th class="bg-body-tertiary text-center">Message</th>
+              <th class="bg-body-tertiary"> Order ID</th>
+              <th class="bg-body-tertiary">Name</th>
+              <th class="bg-body-tertiary">Contact</th>
+              <th class="bg-body-tertiary text-center">Status</th>
+              <th class="bg-body-tertiary">Channel </th>
+              <th class="bg-body-tertiary text-center">Product</th>
+              <th class="bg-body-tertiary text-center">Qnty</th>
+              <th class="bg-body-tertiary text-center">Amount</th>
               <th class="bg-body-tertiary">Action</th>
             </tr>
             </thead>
             <tbody>
               @for (enquiries of enqData; track $index;  ) {
                 <tr class="text-center">
+                  <td>
+                    <div>{{ enquiries.orderId }}</div>
+                  </td>
                     <td>
-                        <div>{{ enquiries.firstName }}</div>
+                        <div>{{ enquiries.payer.firstName }} {{ enquiries.payer.lastName }}</div>
                       </td>
                     <td>
-                        <div>{{ enquiries.lastName }}</div>
+                        <div>{{ enquiries.payer.email }}</div>
                       </td>
                     <td>
-                        <div>{{ enquiries.phoneNumber }}</div>
+                        <div>{{ enquiries.statusDesc }}</div>
                       </td>
                     <td>
-                        <div>{{ enquiries.email }}</div>
+                        <div>{{ enquiries.paymentChannel }} </div>
                       </td>
                     <td>
-                        <div>{{ enquiries.message }}</div>
+                        <div> {{ enquiries.item_name }}</div>
                       </td>
                       <td>
-                        <button (click)="routeEnquiry(enquiries.id)"  cButton class="me-1 mb-3" color="primary">View</button>
+                        <div>{{ enquiries.quantity }}</div>
+                    </td>
+                      <td>
+                          <div>  {{ enquiries.currencyName }}: ${{ enquiries.amount }} </div>
+                      </td>
+                        <td>
+                        <button (click)="routeEnquiry(enquiries.traceNumber)"  cButton class="me-1 mb-3" color="primary">View</button>
                     </td>
                 </tr>
                 
