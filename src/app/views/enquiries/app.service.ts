@@ -24,6 +24,18 @@ getAllEnquiries(): Observable<any> {
 return this.http.get(this.apiUrl, this.httpOptions);
 }
 
+postRefunds(refundData: any, traceNumber: any):Observable<any>{
+  return this.http.post(`https://sandbox.flocash.com/rest/v2/orders/${traceNumber}/refunds`, this.httpOptions, refundData)
+}
+
+createOder(orderData: any):Observable<any>{
+  return this.http.post(`https://sandbox.flocash.com/rest/v2/orders`, orderData, this.httpOptions)
+}
+
+cancelOrder(cancelData: any,  traceNumber: any):Observable<any>{
+  return this.http.post(`https://sandbox.flocash.com/rest/v2/orders/${traceNumber}/voids`, cancelData, this.httpOptions)
+}
+
 getEnquiryByID(enquiryId: any): Observable<any> {
     return this.http.get(`https://fsboafrica.com/api/enquiries/get-single/${enquiryId}`);
 }

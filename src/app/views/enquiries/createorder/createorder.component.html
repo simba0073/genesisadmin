@@ -3,36 +3,138 @@
     <c-card-body>
 
     <h1 style="text-align: center;">Create an Order</h1>
-<form>
+<form [formGroup]="orderForm">
+    <!-- orders -->
     <div class="form-group row" style="padding-top: 20px ;">
-        <label type="text" class="col-sm-2 col-form-label">Trace Number</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Trace Number">
-        </div>
-      </div>
-    <div class="form-group row" style="padding-top: 20px ;">
-      <label type="text" class="col-sm-2 col-form-label">Amount</label>
+      <label  class="col-sm-2 col-form-label">Amount</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Amount">
+        <input matInput required formControlName="Amount" type="text" class="form-control" id="inputPassword" placeholder="Amount">
       </div>
     </div>
     <div class="form-group row" style="padding-top: 20px ;">
         <label  class="col-sm-2 col-form-label">Currency</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword" placeholder="Currency">
+          <input matInput required formControlName="Currency" type="text" class="form-control" id="inputPassword" placeholder="Currency">
         </div>
       </div>
 
       <div class="form-group row" style="padding-top: 20px ;">
-        <label class="col-sm-2 col-form-label">Statement</label>
+        <label class="col-sm-2 col-form-label">Order Id</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword" placeholder="Statement">
+          <input matInput required formControlName="orderId" type="text" class="form-control" id="inputPassword" placeholder="orderId">
+        </div>
+      </div>
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label type="text" class="col-sm-2 col-form-label">Item Name</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="item_name"  type="text" class="form-control" id="formGroupExampleInput" placeholder="Item Name">
+        </div>
+      </div>
+    <div class="form-group row" style="padding-top: 20px ;">
+      <label type="text" class="col-sm-2 col-form-label">Item Price</label>
+      <div class="col-sm-10">
+        <input matInput required formControlName="item_price"  type="text" class="form-control" id="formGroupExampleInput" placeholder="Item Price">
+      </div>
+    </div>
+    <div class="form-group row" style="padding-top: 20px ;">
+        <label  class="col-sm-2 col-form-label">Quantity</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="Quantity" type="text" class="form-control" id="inputPassword" placeholder="Quantity">
+        </div>
+      </div>
+    </form>
+    <form [formGroup]="merchantForm">
+      <!-- merchant-->
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label class="col-sm-2 col-form-label">Merchant Account</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="merchantAccount" type="text" class="form-control" id="inputPassword" placeholder="Merchant Account">
+        </div>
+      </div>
+    </form>
+
+    <!-- payer infor -->
+    <form [formGroup]="payerForm">
+    <div class="form-group row" style="padding-top: 20px ;">
+      <label type="text" class="col-sm-2 col-form-label">Country</label>
+      <div class="col-sm-10">
+        <input matInput required formControlName="Country" type="text" class="form-control" id="formGroupExampleInput" placeholder="Country">
+      </div>
+    </div>
+    <div class="form-group row" style="padding-top: 20px ;">
+        <label  class="col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="firstName" type="text" class="form-control" id="inputPassword" placeholder="First Name">
+        </div>
+      </div>
+
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label class="col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="lastName" type="text" class="form-control" id="inputPassword" placeholder="Last Name">
+        </div>
+      </div>
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label type="text" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input  matInput required formControlName="Email" type="text" class="form-control" id="formGroupExampleInput" placeholder="Email">
+        </div>
+      </div>
+    <div class="form-group row" style="padding-top: 20px ;">
+      <label type="text" class="col-sm-2 col-form-label">Mobile</label>
+      <div class="col-sm-10">
+        <input matInput required formControlName="Mobile" type="text" class="form-control" id="formGroupExampleInput" placeholder="Mobile">
+      </div>
+    </div>
+    </form>
+
+    <!-- pay option -->
+    <form [formGroup]="payoptionForm">
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label type="text" class="col-sm-2 col-form-label">Payment Type</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="id" type="text" class="form-control" id="formGroupExampleInput" placeholder="Payment Type">
+        </div>
+      </div>
+    </form>
+     <!-- card info -->
+    <form [formGroup]="cardInforForm">
+    <div class="form-group row" style="padding-top: 20px ;">
+        <label  class="col-sm-2 col-form-label">Card Holder</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="cardholder" type="text" class="form-control" id="inputPassword" placeholder="Card Holder">
+        </div>
+      </div>
+
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label class="col-sm-2 col-form-label">Card Number</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="cardNumber" type="text" class="form-control" id="inputPassword" placeholder="Card Number">
+        </div>
+      </div>
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label class="col-sm-2 col-form-label">Expiry Month</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="expireMonth" type="text" class="form-control" id="inputPassword" placeholder="Expiry Month">
+        </div>
+      </div>
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label class="col-sm-2 col-form-label">Expiry Year</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="expireYear" type="text" class="form-control" id="inputPassword" placeholder="Expiry year">
+        </div>
+      </div>
+      <div class="form-group row" style="padding-top: 20px ;">
+        <label class="col-sm-2 col-form-label">CVV</label>
+        <div class="col-sm-10">
+          <input matInput required formControlName="cvv" type="text" class="form-control" id="inputPassword" placeholder="CVV">
         </div>
       </div>
       <div style="padding-top: 20px; align-content: center;">
         <button  cButton class="me-1 mb-3" color="secondary">Cancel</button>
-        <button  cButton class="me-1 mb-3" color="primary">Submit</button>
+        <button  cButton class="me-1 mb-3" color="primary" [disabled]="!orderForm.valid" (click)="submit()">Submit</button>
       </div>
+      
   </form>
   </c-card-body>
   </c-card>

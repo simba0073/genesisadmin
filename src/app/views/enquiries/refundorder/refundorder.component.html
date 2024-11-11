@@ -3,35 +3,35 @@
     <c-card-body>
 
     <h1 style="text-align: center;">Refund an Order</h1>
-<form>
+<form [formGroup]="refundForm">
     <div class="form-group row" style="padding-top: 20px ;">
         <label type="text" class="col-sm-2 col-form-label">Trace Number</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Trace Number">
+          <input matInput required formControlName="traceNumber" type="text" class="form-control" id="formGroupExampleInput" placeholder="Trace Number">
         </div>
       </div>
     <div class="form-group row" style="padding-top: 20px ;">
       <label type="text" class="col-sm-2 col-form-label">Amount</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Amount">
+        <input matInput required formControlName="Amount" type="text" class="form-control" id="formGroupExampleInput" placeholder="Amount">
       </div>
     </div>
     <div class="form-group row" style="padding-top: 20px ;">
         <label  class="col-sm-2 col-form-label">Currency</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword" placeholder="Currency">
+          <input matInput required formControlName="Currency" type="text" class="form-control" id="inputPassword" placeholder="Currency">
         </div>
       </div>
 
       <div class="form-group row" style="padding-top: 20px ;">
         <label class="col-sm-2 col-form-label">Statement</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword" placeholder="Statement">
+          <input matInput required formControlName="Statement" type="text" class="form-control" id="inputPassword" placeholder="Statement">
         </div>
       </div>
       <div style="padding-top: 20px; align-content: center;">
         <button  cButton class="me-1 mb-3" color="secondary">Cancel</button>
-        <button  cButton class="me-1 mb-3" color="primary">Submit</button>
+        <button  cButton class="me-1 mb-3" color="primary" [disabled]="!refundForm.valid" (click)="submit()">Submit</button>
       </div>
   </form>
   </c-card-body>
